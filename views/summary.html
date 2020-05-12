@@ -5,14 +5,14 @@
             <div class="col-lg-6">
                 <div class="card">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Cras</li>
-                        <li class="list-group-item">Cras</li>
-                        <li class="list-group-item">Cras</li>
-                        <li class="list-group-item">Cras</li>
-                        <li class="list-group-item">Cras</li>
-                        <li class="list-group-item">Cras</li>
-                        <li class="list-group-item">Cras</li>
-                        <li class="list-group-item">Cras</li>
+                        <li class="list-group-item">Name: {{ @SESSION.fname }} {{ @SESSION.lname }}</li>
+                        <li class="list-group-item">Gender: {{ @SESSION.gender }}</li>
+                        <li class="list-group-item">Age: {{ @SESSION.age }}</li>
+                        <li class="list-group-item">Phone: {{ @SESSION.phone }}</li>
+                        <li class="list-group-item">Email: {{ @SESSION.email }}</li>
+                        <li class="list-group-item">State: {{ @SESSION.state }}</li>
+                        <li class="list-group-item">Seeking: {{ @SESSION.sex }}</li>
+                        <li class="list-group-item">Interests: {{ @SESSION.interests }}</li>
                     </ul>
                 </div>
             </div>
@@ -21,13 +21,13 @@
                      height="350">
                 <div class="text-left p-3">
                     <h3>Biography</h3>
-                    <p>jhgjygyggy gcgcig ig gi gi g ig y yig yig yi yig yg ig ig ig i</p>
+                    <p>{{ @SESSION.biography }}</p>
                 </div>
             </div>
         </div>
-        <div class="text-center p-2">
-            <a class="btn btn-primary text-white" href="personal-information">Contact Me!</a>
-        </div>
 
+        <div class="text-center p-2">
+            <a class="btn btn-primary text-white" href="">Contact Me!</a>
+        </div>
     </div>
 </div>
