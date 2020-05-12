@@ -1,96 +1,38 @@
-<!--
-Name: Changming Tan
-Date: 4/27/2020
-
-This is a pet dating website.
--->
-
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="styles/styles.css">
-    <title>Pets Dating</title>
-
-
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Pets Dating</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+<include href="includes/header.html"></include>
+<div class="card container">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="container">
+                    <h1 class="text-center">My Pets Dating Website</h1>
+                    <p>Welcome to the web's most successful pet dating website. At <b>My Pets Dating Website</b>,
+                        your pet will meet another like-minded partner. We have the highest success rate of pet
+                        couples on the web. User's pets are matched by interest and location. Find out why so many
+                        others' pets have found love on our site!</p>
                 </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
-<div class="container mt-5 mb-5 shadow p-3 mb-5 bg-white rounded">
-    <div class="row rounded">
-        <div class="col-md-6 rounded">
-            <div class="container">
-                <h1 class="text-center">My Pets Dating Website</h1>
-                <p>Welcome to the web's most successful pet dating website. At <b>My Pets Dating Website</b>, your pet
-                    will meet another like-minded partner. We have the highest success rate of pet couples on the web.
-                    User's pets are matched by interest and location. Find out why so many others' pets have found love
-                    on our site!</p>
-            </div>
-            <div class="container">
-                <h4 class="text-center">Hear what our users are saying about us</h4>
-                <hr>
-                <blockquote class="mx-4">
-                    <i>"My dog met the love of his life after only a month!" -Andrea</i><br>
-                    <i>"It was so easy to set up and profile and start meeting other people's
-                        pets. I didn't realize how
-                        many others were looking for love for their pets in my area." -Lucy</i><br>
-                    <i>"Just try it! You'll never be the same!" -Mike</i>
-                </blockquote>
-                <hr>
-            </div>
+                <div class="container">
+                    <h4 class="text-center">Hear what our users are saying about us</h4>
+                    <hr>
+                    <blockquote class="mx-4">
+                        <i>"My dog met the love of his life after only a month!" -Andrea</i><br>
+                        <i>"It was so easy to set up and profile and start meeting other people's pets. I didn't
+                            realize how many others were looking for love for their pets in my area." -Lucy</i><br>
+                        <i>"Just try it! You'll never be the same!" -Mike</i>
+                    </blockquote>
+                    <hr>
+                </div>
 
-            <div class="text-center">
-                <button type="button" class="btn btn-primary rounded align-items-center">Create a Profile!</button>
+                <div class="text-center p-2">
+                    <a class="btn btn-primary text-white" href="personal-information">Create a Profile!</a>
+                </div>
             </div>
-        </div>
-        <div class="col-md-6 rounded pt-5 pl-5">
-            <img src="images/pet.jpg" alt="pet couple" class="rounded">
+            <div class="col-sm-6 text-center">
+                <img src="images/pet.jpg" alt="pet couple" class="rounded">
+            </div>
         </div>
     </div>
 </div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

@@ -1,0 +1,59 @@
+<include href="includes/header.html"></include>
+<div class="card container">
+    <div class="card-body">
+        <h1>Personal Information</h1>
+        <hr>
+
+        <form id="pinfo" action="#" method="post" class="row">
+            <div class="col-lg-8">
+                <div class="form-group">
+                    <label for="fname" class="font-weight-bold">First Name</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="fname" name="fname">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2"><i class="fas fa-address-card"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lname" class="font-weight-bold">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lname">
+                </div>
+                <div class="form-group">
+                    <label for="age" class="font-weight-bold">Age</label>
+                    <input type="text" class="form-control" id="age" name="age">
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-bold">Gender</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sex" id="male" value="male">
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sex" id="female" value="female">
+                        <label class="form-check-label" for="female">Female</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="font-weight-bold">Phone Number</label>
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="123-4567-8900">
+                </div>
+
+            </div>
+            <div class="col-lg-4">
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <p class="card-text"><b>Note:</b> All information entered is protected by our <a
+                                href="https://en.wikipedia.org/wiki/Privacy_policy" target="_blank">privacy policy</a>.
+                            Profile information can only be viewed by others with your permission.</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="float-right p-2">
+            <button type="submit" form="pinfo" class="btn btn-primary">Next ></button>
+        </div>
+
+    </div>
+</div>
