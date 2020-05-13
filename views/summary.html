@@ -3,6 +3,7 @@
     <div class="card-body">
         <div id="summary" class="row">
             <div class="col-lg-6">
+
                 <div class="card">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Name: {{ @SESSION.fname }} {{ @SESSION.lname }}</li>
@@ -12,22 +13,25 @@
                         <li class="list-group-item">Email: {{ @SESSION.email }}</li>
                         <li class="list-group-item">State: {{ @SESSION.state }}</li>
                         <li class="list-group-item">Seeking: {{ @SESSION.sex }}</li>
-                        <li class="list-group-item">Interests: {{ @SESSION.interests }}</li>
+                        <li class="list-group-item">Interests: {{ implode(@SESSION.interests, " ") }}</li>
                     </ul>
                 </div>
             </div>
+
             <div class="col-lg-6 text-center">
-                <img src="https://www.colasanti.com/wp-content/uploads/2017/08/Dog-Icon.png" alt="pet" width="350"
+                <img src="https://pluspng.com/img-png/user-png-icon-male-user-icon-512.png" alt="user" width="350"
                      height="350">
                 <div class="text-left p-3">
                     <h3>Biography</h3>
                     <p>{{ @SESSION.biography }}</p>
                 </div>
             </div>
+
         </div>
 
         <div class="text-center p-2">
             <a class="btn btn-primary text-white" href="">Contact Me!</a>
         </div>
+
     </div>
 </div>

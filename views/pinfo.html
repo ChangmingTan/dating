@@ -31,10 +31,9 @@
                     <label class="font-weight-bold">Gender</label><br>
                     <div class="form-check form-check-inline">
                         <repeat group="{{ @genders }}" value="{{ @gender }}">
-                            <input class="form-check-input" type="radio" name="sex" id="{{ @gender }}"
+                            <input class="form-check-input" type="radio" name="gender" id="{{ @gender }}"
                                    value="{{ @gender }}">
                             <label for="{{ @gender }}" class="form-check-label"> {{ ucfirst(@gender) }}&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                            </input>
                         </repeat>
                     </div>
                 </div>

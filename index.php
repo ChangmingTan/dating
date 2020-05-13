@@ -23,29 +23,29 @@ $f3->route('GET /', function () {
 //Personal Information route
 $f3->route('GET|POST /personal-information', function ($f3) {
 
-    $genders = array("male", "female");
+    $genders = array("Male", "Female");
 
     //If the form has been submitted
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         var_dump($_POST);
 
-        //Validate the data
-        if (empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['age']) || !in_array($_POST['sex'], $genders) || empty($_POST['phone'])) {
-            echo "<p>Please fill out all blanks</p>";
-        } elseif (!is_numeric($_POST['age'])) {
-            echo "<p>Please enter a valid number for age</p>";
-        } //Data is valid
-        else {
-            //Store the data in the session array
-            $_SESSION['fname'] = $_POST['fname'];
-            $_SESSION['lname'] = $_POST['lname'];
-            $_SESSION['age'] = $_POST['age'];
-            $_SESSION['gender'] = $genders;
-            $_SESSION['phone'] = $_POST['phone'];
+//        //Validate the data
+//        if (empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['age']) || !in_array($_POST['gender'], $genders) || empty($_POST['phone'])) {
+//            echo "<p>Please fill out all blanks</p>";
+//        } elseif (!is_numeric($_POST['age'])) {
+//            echo "<p>Please enter a valid number for age</p>";
+//        } //Data is valid
+//        else {
+        //Store the data in the session array
+        $_SESSION['fname'] = $_POST['fname'];
+        $_SESSION['lname'] = $_POST['lname'];
+        $_SESSION['age'] = $_POST['age'];
+        $_SESSION['gender'] = $_POST['gender'];
+        $_SESSION['phone'] = $_POST['phone'];
 
-            //Redirect to profile page
-            $f3->reroute('profile');
-        }
+        //Redirect to profile page
+        $f3->reroute('profile');
+//        }
     }
 
     $f3->set('genders', $genders);
@@ -57,26 +57,26 @@ $f3->route('GET|POST /personal-information', function ($f3) {
 $f3->route('GET|POST /profile', function ($f3) {
 
     $states = getStates();
-    $sexes = array("male", "female");
+    $sexes = array("Male", "Female");
 
     //If the form has been submitted
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         var_dump($_POST);
 
-        //Validate the data
-        if (empty($_POST['email']) || !in_array($_POST['state'], $states) || !in_array($_POST['sex'], $sexes) || empty($_POST['biography'])) {
-            echo "<p>Please fill out all blanks</p>";
-        } //Data is valid
-        else {
-            //Store the data in the session array
-            $_SESSION['email'] = $_POST['email'];
-            $_SESSION['state'] = $states;
-            $_SESSION['sex'] = $sexes;
-            $_SESSION['biography'] = $_POST['biography'];
+//        //Validate the data
+//        if (empty($_POST['email']) || !in_array($_POST['state'], $states) || !in_array($_POST['sex'], $sexes) || empty($_POST['biography'])) {
+//            echo "<p>Please fill out all blanks</p>";
+//        } //Data is valid
+//        else {
+        //Store the data in the session array
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['state'] = $_POST['state'];
+        $_SESSION['sex'] = $_POST['sex'];
+        $_SESSION['biography'] = $_POST['biography'];
 
-            //Redirect to Interests page
-            $f3->reroute('interests');
-        }
+        //Redirect to Interests page
+        $f3->reroute('interests');
+//        }
     }
 
     $f3->set('states', $states);
@@ -89,7 +89,7 @@ $f3->route('GET|POST /profile', function ($f3) {
 //Interests route
 $f3->route('GET|POST /interests', function ($f3) {
 
-    $interests = array("tv", "movies", "playing toys", "tug-of-war", "treat hunt", "shell game", "count numbers", "help with chores", "hiking", "swimming", "jogging", "walking", "geocaching", "diving");
+    $interests = array("tv", "movies", "cooking", "drawing", "puzzles", "reading", "singing", "sleeping", "hiking", "biking", "swimming", "collecting", "walking", "climbing");
     $interestsHalf = array_chunk($interests, 8, true);
 
     //If the form has been submitted
@@ -97,7 +97,7 @@ $f3->route('GET|POST /interests', function ($f3) {
         var_dump($_POST);
 
         //Store the data in the session array
-        $_SESSION['interests'] = $interests;
+        $_SESSION['interests'] = $_POST['interests'];
 
         //Redirect to Summary page
         $f3->reroute('summary');
