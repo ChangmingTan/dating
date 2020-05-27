@@ -5,14 +5,22 @@
         <hr>
         <form id="interests" action="#" method="post" class="row">
             <div class="container">
-                <label class="font-weight-bold">In-door Interests</label>
+                <label class="font-weight-bold">In-door Interests</label><br>
+
+                <check if="{{ isset(@errors['indoor']) }}">
+                    <span class="err">{{ @errors['indoor'] }}</span>
+                </check>
 
                 <div class="row">
                     <repeat group="{{ @indoors }}" value="{{ @indoor }}">
                         <div class="col-6 col-sm-3">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="{{ @indoor }}"
-                                       name="interests[]" value="{{ @indoor }}">
+                                       name="indoor[]" value="{{ @indoor }}"
+                                <check if="{{ @indoor == @selectedIndoor }}">
+                                    checked="checked"
+                                </check>
+                                >
                                 <label class="custom-control-label" for="{{ @indoor }}">{{ @indoor }}</label>
                             </div>
                         </div>
@@ -21,23 +29,29 @@
 
             </div>
 
-            <br><br><br><br>
-
             <div class="container">
-                <label class="font-weight-bold">Out-door Interests</label>
+                <label class="font-weight-bold mt-4">Out-door Interests</label><br>
+
+                <check if="{{ isset(@errors['outdoor']) }}">
+                    <span class="err">{{ @errors['outdoor'] }}</span>
+                </check>
 
                 <div class="row">
                     <repeat group="{{ @outdoors }}" value="{{ @outdoor }}">
                         <div class="col-6 col-sm-3">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="{{ @outdoor }}"
-                                       name="interests[]" value="{{ @outdoor }}">
+                                       name="outdoor[]" value="{{ @outdoor }}"
+                                <check if="{{ @outdoor == @selectedOutdoor }}">
+                                    checked="checked"
+                                </check>
+                                >
                                 <label class="custom-control-label" for="{{ @outdoor }}">{{ @outdoor }}</label>
                             </div>
                         </div>
                     </repeat>
-                </div>
 
+                </div>
             </div>
         </form>
 

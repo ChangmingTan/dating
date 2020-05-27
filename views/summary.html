@@ -7,13 +7,27 @@
                 <div class="card">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Name: {{ @SESSION.fname }} {{ @SESSION.lname }}</li>
-                        <li class="list-group-item">Gender: {{ @SESSION.gender }}</li>
+
+                        <check if="{{ isset(@SESSION.gender) }}">
+                            <li class="list-group-item">Gender: {{ @SESSION.gender }}</li>
+                        </check>
+
                         <li class="list-group-item">Age: {{ @SESSION.age }}</li>
                         <li class="list-group-item">Phone: {{ @SESSION.phone }}</li>
                         <li class="list-group-item">Email: {{ @SESSION.email }}</li>
                         <li class="list-group-item">State: {{ @SESSION.state }}</li>
-                        <li class="list-group-item">Seeking: {{ @SESSION.sex }}</li>
-                        <li class="list-group-item">Interests: {{ implode(@SESSION.interests, ", ") }}</li>
+
+                        <check if="{{ isset(@SESSION.sex) }}">
+                            <li class="list-group-item">Seeking: {{ @SESSION.sex }}</li>
+                        </check>
+
+                        <check if="{{ isset(@SESSION.indoor) }} || {{ isset(@SESSION.outdoor) }}">
+                            <li class="list-group-item">Interests:
+                                <check if="{{ isset(@SESSION.indoor) }}">{{ implode(@SESSION.indoor, ", ") }},</check>
+                                <check if="{{ isset(@SESSION.outdoor) }}">{{ implode(@SESSION.outdoor, ", ") }}</check>
+                            </li>
+                        </check>
+
                     </ul>
                 </div>
             </div>
@@ -22,8 +36,10 @@
                 <img src="https://pluspng.com/img-png/user-png-icon-male-user-icon-512.png" alt="user" width="350"
                      height="350">
                 <div class="text-left p-3">
-                    <h3>Biography</h3>
-                    <p>{{ @SESSION.biography }}</p>
+                    <check if="{{ !empty(@SESSION.biography) }}">
+                        <h3>Biography</h3>
+                        <p>{{ @SESSION.biography }}</p>
+                    </check>
                 </div>
             </div>
 
