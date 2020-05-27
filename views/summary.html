@@ -21,9 +21,9 @@
                             <li class="list-group-item">Seeking: {{ @SESSION.sex }}</li>
                         </check>
 
-                        <check if="{{ isset(@SESSION.indoor) }} || {{ isset(@SESSION.outdoor) }}">
+                        <check if="{{ isset(@SESSION.indoor) || isset(@SESSION.outdoor) }}">
                             <li class="list-group-item">Interests:
-                                <check if="{{ isset(@SESSION.indoor) }}">{{ implode(@SESSION.indoor, ", ") }},</check>
+                                <check if="{{ isset(@SESSION.indoor) }}">{{ implode(@SESSION.indoor, ", ") }}<check if="{{ isset(@SESSION.outdoor) }}">,</check></check>
                                 <check if="{{ isset(@SESSION.outdoor) }}">{{ implode(@SESSION.outdoor, ", ") }}</check>
                             </li>
                         </check>

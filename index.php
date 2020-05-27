@@ -128,7 +128,7 @@ $f3->route('GET|POST /interests', function ($f3) {
         $outdoors = $_POST['outdoor'];
 
         //Validate the data
-        if (isset($_POST['indoor'])) {
+        if (isset($indoors)) {
             foreach ($indoors as $indoor) {
 
                 $f3->set('selectedIndoor', $indoor);
@@ -141,7 +141,7 @@ $f3->route('GET|POST /interests', function ($f3) {
             }
         }
 
-        if (isset($_POST['outdoor'])) {
+        if (isset($outdoors)) {
             foreach ($outdoors as $outdoor) {
 
                 $f3->set('selectedOutdoor', $outdoor);
@@ -158,8 +158,8 @@ $f3->route('GET|POST /interests', function ($f3) {
         if (empty($f3->get('errors'))) {
 
             //Store the data in the session array
-            $_SESSION['indoor'] = $_POST['indoor'];
-            $_SESSION['outdoor'] = $_POST['outdoor'];
+            $_SESSION['indoor'] = $indoors;
+            $_SESSION['outdoor'] = $outdoors;
 
             //Redirect to Summary page
             $f3->reroute('summary');
