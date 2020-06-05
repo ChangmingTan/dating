@@ -61,14 +61,18 @@ $f3->route('GET|POST /personal-information', function ($f3) {
             //Redirect to profile page
             $f3->reroute('profile');
         }
+
+        $_SESSION['premium'] = $_POST['premium'];
     }
 
-    $f3->set('genders', getGender());
     $f3->set('fname', $_POST['fname']);
     $f3->set('lname', $_POST['lname']);
     $f3->set('age', $_POST['age']);
+    $f3->set('genders', getGender());
     $f3->set('selectedGender', $_POST['gender']);
     $f3->set('phone', $_POST['phone']);
+    $f3->set('premium', $_POST['premium']);
+    $f3->set('selectedPremium', $_POST['premium']);
 
     $view = new Template();
     echo $view->render('views/pinfo.html');

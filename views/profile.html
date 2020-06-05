@@ -20,7 +20,11 @@
                     <select class="form-control" id="state" name="state">
                         <repeat group="{{ @states }}" value="{{ @state }}">
                             <option value="{{ @state }}"
-                            <check if="{{ @state == @selectedState }}">selected="selected"</check>
+
+                            <check if="{{ @state == @selectedState }}">
+                                selected="selected"
+                            </check>
+
                             > {{ @state }}</option>
                         </repeat>
                     </select>
