@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class Member
+ */
 class Member
 {
     //Declare instance variables
@@ -13,10 +16,16 @@ class Member
     private $_seeking;
     private $_bio;
 
+
     /**
-     * Default Member constructor.
+     * Member constructor.
+     * @param string $fname the first name
+     * @param string $lname the last name
+     * @param int $age the age
+     * @param string $gender the gender
+     * @param string $phone the phone
      */
-    public function __construct($fname, $lname, $age, $gender, $phone)
+    public function __construct($fname="", $lname="", $age=0, $gender="", $phone="")
     {
         $this->setFname($fname);
         $this->setLname($lname);

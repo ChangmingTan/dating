@@ -6,25 +6,25 @@
 
                 <div class="card">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Name: {{ @SESSION.fname }} {{ @SESSION.lname }}</li>
+                        <li class="list-group-item">Name: {{ @SESSION.pInfo->getFname() }} {{ @SESSION.pInfo->getLname() }}</li>
 
-                        <check if="{{ isset(@SESSION.gender) }}">
-                            <li class="list-group-item">Gender: {{ @SESSION.gender }}</li>
+                        <check if="{{ !empty(@SESSION.pInfo->getGender()) }}">
+                            <li class="list-group-item">Gender: {{ @SESSION.pInfo->getGender() }}</li>
                         </check>
 
-                        <li class="list-group-item">Age: {{ @SESSION.age }}</li>
-                        <li class="list-group-item">Phone: {{ @SESSION.phone }}</li>
-                        <li class="list-group-item">Email: {{ @SESSION.email }}</li>
-                        <li class="list-group-item">State: {{ @SESSION.state }}</li>
+                        <li class="list-group-item">Age: {{ @SESSION.pInfo->getAge() }}</li>
+                        <li class="list-group-item">Phone: {{ @SESSION.pInfo->getPhone() }}</li>
+                        <li class="list-group-item">Email: {{ @SESSION.pInfo->getEmail() }}</li>
+                        <li class="list-group-item">State: {{ @SESSION.pInfo->getState() }}</li>
 
-                        <check if="{{ isset(@SESSION.sex) }}">
-                            <li class="list-group-item">Seeking: {{ @SESSION.sex }}</li>
+                        <check if="{{ !empty(@SESSION.pInfo->getSeeking()) }}">
+                            <li class="list-group-item">Seeking: {{ @SESSION.pInfo->getSeeking() }}</li>
                         </check>
 
-                        <check if="{{ isset(@SESSION.indoor) || isset(@SESSION.outdoor) }}">
+                        <check if="{{ @SESSION.pInfo instanceof PremiumMember && (!empty(@SESSION.pInfo->getInDoorInterests()) || !empty(@SESSION.pInfo->getOutDoorInterests())) }}">
                             <li class="list-group-item">Interests:
-                                <check if="{{ isset(@SESSION.indoor) }}">{{ implode(@SESSION.indoor, ", ") }}<check if="{{ isset(@SESSION.outdoor) }}">,</check></check>
-                                <check if="{{ isset(@SESSION.outdoor) }}">{{ implode(@SESSION.outdoor, ", ") }}</check>
+                                <check if="{{ !empty(@SESSION.pInfo->getInDoorInterests()) }}">{{ implode(@SESSION.pInfo->getInDoorInterests(), ", ") }}<check if="{{ !empty(@SESSION.pInfo->getOutDoorInterests()) }}">,</check></check>
+                                <check if="{{ !empty(@SESSION.pInfo->getOutDoorInterests()) }}">{{ implode(@SESSION.pInfo->getOutDoorInterests(), ", ") }}</check>
                             </li>
                         </check>
 
@@ -36,9 +36,9 @@
                 <img src="https://pluspng.com/img-png/user-png-icon-male-user-icon-512.png" alt="user" width="350"
                      height="350">
                 <div class="text-left p-3">
-                    <check if="{{ !empty(@SESSION.biography) }}">
+                    <check if="{{ !empty(@SESSION.pInfo->getBio()) }}">
                         <h3>Biography</h3>
-                        <p>{{ @SESSION.biography }}</p>
+                        <p>{{ @SESSION.pInfo->getBio() }}</p>
                     </check>
                 </div>
             </div>
