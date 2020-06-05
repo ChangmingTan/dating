@@ -25,7 +25,7 @@ class Member
      * @param string $gender the gender
      * @param string $phone the phone
      */
-    public function __construct($fname="", $lname="", $age=0, $gender="", $phone="")
+    public function __construct($fname = "", $lname = "", $age = 0, $gender = "", $phone = "")
     {
         $this->setFname($fname);
         $this->setLname($lname);
