@@ -19,8 +19,8 @@ class PremiumMember extends Member
     {
         parent::__construct($fname, $lname, $age, $gender, $phone);
 
-        $this->_inDoorInterests = $inDoorInterests;
-        $this->_outDoorInterests = $outDoorInterests;
+        $this->setInDoorInterests($inDoorInterests);
+        $this->setOutDoorInterests($outDoorInterests);
     }
 
     /** Get the indoor interests
